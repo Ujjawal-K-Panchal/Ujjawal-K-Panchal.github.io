@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ujjawal Kamal Panchal</title>
+<meta name="description" content="Student of Machine Learning. Read. Ideate. Experiment. Isolate. Revise.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Ujjawal Kamal Panchal</h1>
+    <p class="standfirst">You can call me <strong>Uj</strong>.<br>Student of Machine Learning.</p>
+
+    <p class="profiles">
+      <a href="https://github.com/Ujjawal-K-Panchal" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=i987M0AAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/ujjawal-k-panchal" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </p>
+
+    <div class="philosophy" aria-label="Working method">
+      <span class="beat">Read</span><span class="arrow">&rarr;</span>
+      <span class="beat">Ideate</span><span class="arrow">&rarr;</span>
+      <span class="beat">Experiment</span><span class="arrow">&rarr;</span>
+      <span class="beat">Isolate</span><span class="arrow">&rarr;</span>
+      <span class="beat">Revise</span>
+    </div>
+  </header>
+
+  <!-- ============================================================ identities -->
+  <section id="who">
+    <div class="identities">
+      <button class="ident" data-ident="student" aria-expanded="false" aria-controls="p-student">
+        <span class="name">Student</span>
+        <span class="gloss">Titles are footprints. I&rsquo;m a student by mindset.</span>
+      </button>
+      <button class="ident" data-ident="researcher" aria-expanded="false" aria-controls="p-researcher">
+        <span class="name">Researcher</span>
+        <span class="gloss">Innovation Fanatic.</span>
+      </button>
+      <button class="ident" data-ident="founder" aria-expanded="false" aria-controls="p-founder">
+        <span class="name">Founder</span>
+        <span class="gloss">0 to {100M MAU, $2M ARR}</span>
+      </button>
+    </div>
+
+    <div class="ident-body">
+      <div class="ident-panel" id="p-student" data-ident="student">
+        <ul class="facts">
+          <li><span class="metric">300+</span><span>Students taught as a TA at UC&nbsp;Davis, in <a href="https://cs.ucdavis.edu/schedules-classes/ecs-171-machine-learning" target="_blank" rel="noopener noreferrer">ECS&nbsp;171 Machine Learning</a> and <a href="https://cs.ucdavis.edu/schedules-classes/ecs-122b-algorithm-design-analysis" target="_blank" rel="noopener noreferrer">ECS&nbsp;122B Advanced Algorithm Design and Analysis</a></span></li>
+          <li><span class="metric">100+</span><span>Students trained and interviewed for a deep learning and Hadoop DB internship at <img class="inlinelogo" src="assets/logos/hpe.png" alt="">HPE Singapore and <img class="inlinelogo" src="assets/logos/nus.png" alt="">National University of Singapore</span></li>
+        </ul>
+      </div>
+
+      <div class="ident-panel" id="p-researcher" data-ident="researcher">
+        <p class="focus"><span class="focuslabel">Current focus:</span> RLVR, Knowledge Distillation, Mixture of Experts.</p>
+      </div>
+
+      <div class="ident-panel" id="p-founder" data-ident="founder">
+        <p>Co-founded <a href="https://memechat.app" target="_blank" rel="noopener noreferrer">Meme Chat</a>, India&rsquo;s first meme creator economy
+        platform. CTO since inception, till 2023. On the Board of Directors, since.</p>
+        <p>In 2020 it won the <a href="https://digitalterminal.in/news/20149.html" target="_blank" rel="noopener noreferrer">People&rsquo;s Choice
+        award for Entertainment</a> at the Government of India&rsquo;s AatmaNirbhar Bharat App Innovation
+        Challenge, on 65% of the public vote.</p>
+        <ul class="facts">
+          <li><span class="metric">$2M+</span><span>Annual recurring revenue, from 0</span></li>
+          <li><span class="metric">100M+</span><span>Users across platforms</span></li>
+          <li><span class="metric">10M+</span><span>Direct downloads on Play and the App Store</span></li>
+        </ul>
+      </div>
+      </details>
+    </div>
+  </section>
+
+
+  <!-- ============================================================= timeline -->
+  <section id="work">
+    <h2>Work</h2>
+
+    <div class="timeline">
+
+      <article class="role now">
+        <span class="when">Jul 2025 &ndash; present</span>
+        <h3>AI Engineer</h3>
+        <p class="org"><a class="orglink" href="https://fundamental.ai" target="_blank" rel="noopener noreferrer"><img class="orglogo" src="assets/logos/fundamental.png" alt=""><span class="orgname">Fundamental AI</span></a> &middot; Palo Alto, CA</p>
+        <details class="rolemore" open>
+          <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><span class="lbl">Details</span><span class="count">5</span></summary>
+          <ul>
+          <li>A novel RLVR method beating SoTA baselines, GRPO included, on continuous-learning tasks.</li>
+          <li>A solution to MoE load balancing that surpasses both auxiliary loss and router bias.</li>
+          <li>A customized KV cache for novel architectural components.</li>
+          <li>A custom DDP stack for architectures PyTorch&rsquo;s wrapper does not cover, and an optimized
+              consensus mechanism for mid-training sync points.</li>
+          <li>~3.5&times; throughput over the legacy codebase; ~36% lower cost across hundreds of small-LLM
+              experiments; ~85% faster CI.</li>
+        </ul>
+        </details>
+      </article>
+
+      <article class="role">
+        <span class="when">Oct 2023 &ndash; Jun 2025</span>
+        <h3>Student Researcher</h3>
+        <p class="org"><a class="orglink" href="https://www.ucdavis.edu" target="_blank" rel="noopener noreferrer"><img class="orglogo" src="assets/logos/ucdavis.svg" alt=""><span class="orgname">University of California, Davis</span></a></p>
+        <details class="rolemore">
+          <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><span class="lbl">Details</span><span class="count">4</span></summary>
+          <ul>
+          <li>An adversarial attack on retrieval-augmented generators.</li>
+          <li>A PEFT adapter that overcomes LoRA&rsquo;s limitations.</li>
+          <li>An efficient pre-training mechanism for time- and cost-efficient LLMs.</li>
+          <li>Inference, fine-tuning and quantization pipelines for several SoTA LLMs.</li>
+        </ul>
+        </details>
+      </article>
+
+      <article class="role">
+        <span class="when">Jun 2024 &ndash; Jun 2025</span>
+        <h3>Teaching Assistant</h3>
+        <p class="org"><a class="orglink" href="https://www.ucdavis.edu" target="_blank" rel="noopener noreferrer"><img class="orglogo" src="assets/logos/ucdavis.svg" alt=""><span class="orgname">University of California, Davis</span></a></p>
+        <details class="rolemore">
+          <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><span class="lbl">Details</span><span class="count">1</span></summary>
+          <ul>
+          <li>Led lectures and guided 300+ students across 100+ group projects in ML fundamentals.</li>
+        </ul>
+        </details>
+      </article>
+
+      <article class="role">
+        <span class="when">Jun 2024 &ndash; Sep 2024</span>
+        <h3>Machine Learning Intern</h3>
+        <p class="org"><a class="orglink" href="https://www.crunchbase.com/organization/inferred-mind" target="_blank" rel="noopener noreferrer"><img class="orglogo" src="assets/logos/inferred-mind.png" alt=""><span class="orgname">Inferred Mind</span></a> &middot; San Francisco Bay Area</p>
+        <details class="rolemore">
+          <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><span class="lbl">Details</span><span class="count">4</span></summary>
+          <ul>
+          <li>Engineered and ran a high-scale RAG system on a custom vector DB, tuning 400M+ embeddings
+              for cost and latency. It ran 4&times; faster and 2&times; cheaper than popular baselines.</li>
+          <li>Pre-trained, fine-tuned and evaluated Freedom Mode, an LLM built to minimize political bias.</li>
+          <li>Ran training, inference and deployment for synthetic influencer and agentic systems.</li>
+          <li>Quantized and compressed small models to match or beat larger ones.</li>
+        </ul>
+        </details>
+      </article>
+
+      <article class="role">
+        <span class="when">Jun 2019 &ndash; Sep 2023</span>
+        <h3>Co-Founder &amp; Chief Technology Officer</h3>
+        <p class="org"><a class="orglink" href="https://memechat.app" target="_blank" rel="noopener noreferrer"><span class="orgmark">👌</span><span class="orgname">Meme Chat</span></a></p>
+        <details class="rolemore">
+          <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><span class="lbl">Details</span><span class="count">3</span></summary>
+          <ul>
+          <li>A semantic-search analytics platform extracting insight from campaign data at 100M+ MAU,
+              with a fine-tuned LLM answering over WhatsApp.</li>
+          <li>Shipped an automated meme generator, semantic meme search, face swap and a meme editor.</li>
+          <li>Led ML end to end and the teams around it, to $2M+ ARR and 10M+ downloads.</li>
+        </ul>
+        </details>
+      </article>
+
+      <details class="rolemore earlier">
+      <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><span class="lbl">Earlier</span><span class="count">7</span></summary>
+
+      <div class="early">
+
+        <article class="role">
+          <span class="when">Feb 2018 &ndash; Mar 2019</span>
+          <h3>Trainer, Counselor &amp; Interviewer</h3>
+          <p class="org"><a class="orglink" href="https://corporategurukul.com" target="_blank" rel="noopener noreferrer"><img class="orglogo" src="assets/logos/corporate-gurukul.png" alt=""><span class="orgname">Corporate Gurukul</span></a></p>
+          <details class="rolemore">
+          <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><span class="lbl">Details</span><span class="count">2</span></summary>
+          <ul>
+            <li>Selected 70 candidates from 1000+ applicants across India for the GAIP programme at NUS
+                Singapore and HP Enterprise.</li>
+            <li>Trained them in data analytics, Hadoop, Linux, Java, Python and networking.</li>
+          </ul>
+        </details>
+        </article>
+
+        <article class="role">
+          <span class="when">Dec 2018 &ndash; Jan 2019</span>
+          <h3>Research Intern</h3>
+          <p class="org"><a class="orglink" href="https://www.iima.ac.in" target="_blank" rel="noopener noreferrer"><img class="orglogo" src="assets/logos/iima.png" alt=""><span class="orgname">Indian Institute of Management Ahmedabad</span></a></p>
+          <details class="rolemore">
+          <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><span class="lbl">Details</span><span class="count">2</span></summary>
+          <ul>
+            <li>Applied self-organizing maps to identify credit-card defaulters; presented at IEEE ICCCNT
+                2019, IIT Kanpur.</li>
+            <li>The technique was taken up by analyst teams at private and public sector banks.</li>
+          </ul>
+        </details>
+        </article>
+
+        <article class="role">
+          <span class="when">May 2018 &ndash; Jul 2018</span>
+          <h3>Research Intern</h3>
+          <p class="org"><a class="orglink" href="https://www.iima.ac.in" target="_blank" rel="noopener noreferrer"><img class="orglogo" src="assets/logos/iima.png" alt=""><span class="orgname">Indian Institute of Management Ahmedabad</span></a></p>
+          <details class="rolemore">
+          <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><span class="lbl">Details</span><span class="count">1</span></summary>
+          <ul>
+            <li>Built ML applications on IIMA&rsquo;s proprietary Bloomberg database for public business
+                analysis, supervised by Prof. Sanjay Verma.</li>
+          </ul>
+        </details>
+        </article>
+
+        <article class="role">
+          <span class="when">Dec 2017 &ndash; Jan 2018</span>
+          <h3>Academic Intern</h3>
+          <p class="org"><a class="orglink" href="https://www.nus.edu.sg" target="_blank" rel="noopener noreferrer"><img class="orglogo" src="assets/logos/nus.png" alt=""><span class="orgname">National University of Singapore</span></a></p>
+          <details class="rolemore">
+          <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><span class="lbl">Details</span><span class="count">1</span></summary>
+          <ul>
+            <li>A research project on credit default analysis over data from the 2006 Taiwan credit card crisis.</li>
+          </ul>
+        </details>
+        </article>
+
+        <article class="role">
+          <span class="when">Dec 2017 &ndash; Jan 2018</span>
+          <h3>Academic Intern</h3>
+          <p class="org"><a class="orglink" href="https://www.ntu.edu.sg" target="_blank" rel="noopener noreferrer"><img class="orglogo" src="assets/logos/ntu.png" alt=""><span class="orgname">Nanyang Technological University</span></a></p>
+          <details class="rolemore">
+          <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><span class="lbl">Details</span><span class="count">1</span></summary>
+          <ul>
+            <li>Implemented RNNs, LSTMs and the traditional models of the day, under Prof. Sundararajan N.</li>
+          </ul>
+        </details>
+        </article>
+
+        <article class="role">
+          <span class="when">Dec 2017 &ndash; Jan 2018</span>
+          <h3>Academic Intern</h3>
+          <p class="org"><a class="orglink" href="https://www.hpe.com" target="_blank" rel="noopener noreferrer"><img class="orglogo" src="assets/logos/hpe.png" alt=""><span class="orgname">Hewlett Packard Enterprise</span></a> &middot; Singapore</p>
+          <details class="rolemore">
+          <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><span class="lbl">Details</span><span class="count">1</span></summary>
+          <ul>
+            <li>An LSTM sentiment model over customer reviews, on a self-deployed distributed Hadoop HDFS
+                cluster, under Mr. Ravindra Kumar.</li>
+          </ul>
+        </details>
+        </article>
+
+        <article class="role">
+          <span class="when">Aug 2013</span>
+          <h3>Volunteer</h3>
+          <p class="org"><a class="orglink" href="https://wfh.org" target="_blank" rel="noopener noreferrer"><img class="orglogo" src="assets/logos/wfh.png" alt=""><span class="orgname">World Federation of Hemophilia</span></a></p>
+          <details class="rolemore">
+          <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><span class="lbl">Details</span><span class="count">1</span></summary>
+          <ul>
+            <li>Raised funds and ran public awareness programmes; awarded a gold certificate for results.</li>
+          </ul>
+        </details>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================== publications -->
+  <section id="publications">
+    <h2>Publications</h2>
+      <details class="pubgroup">
+      <summary class="pubgroup-name"><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>Statistics in Public Healthcare<span class="count">2</span></summary>
+      <ol class="pubs">
+        <li>
+          <span class="year">2026</span>
+          <span><span class="title"><a href="https://doi.org/10.1136/jnis-2026-snis.397" target="_blank" rel="noopener noreferrer">Baseline antiplatelet therapy is not associated with increased risk of hemorrhagic transformation following intravenous thrombolysis</a></span><span class="venue">SNIS 23rd Annual Meeting, electronic poster abstracts &middot; Jul 2026</span></span>
+        </li>
+        <li>
+          <span class="year">2026</span>
+          <span><span class="title"><a href="https://doi.org/10.1136/jnis-2026-snis.200" target="_blank" rel="noopener noreferrer">Baseline anticoagulation in non-valvular atrial fibrillation does not increase hemorrhagic transformation risk after endovascular thrombectomy</a></span><span class="venue">SNIS 23rd Annual Meeting, electronic poster abstracts &middot; Jul 2026</span></span>
+        </li>
+      </ol>
+      </details>
+      <details class="pubgroup">
+      <summary class="pubgroup-name"><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>LLM Finetuning &amp; Safety<span class="count">1</span></summary>
+      <ol class="pubs">
+        <li>
+          <span class="year">2025</span>
+          <span><span class="title"><a href="https://www.proquest.com/openview/b55df84cb7a91e5edab9c420c3b7b766/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y" target="_blank" rel="noopener noreferrer">On a High-Rank Parameter-Efficient Adapter and Context-Modification Attack for Frozen Language Models</a></span><span class="venue">University of California, Davis &middot; Jun 2025</span></span>
+        </li>
+      </ol>
+      </details>
+      <details class="pubgroup">
+      <summary class="pubgroup-name"><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>Novel Architectures<span class="count">2</span></summary>
+      <ol class="pubs">
+        <li>
+          <span class="year">2024</span>
+          <span><span class="title"><a href="https://arxiv.org/abs/2410.09687" target="_blank" rel="noopener noreferrer">MoIN: Mixture of Introvert Experts to Upcycle an LLM</a></span><span class="venue">arXiv:2410.09687 &middot; Oct 2024</span></span>
+        </li>
+        <li>
+          <span class="year">2022</span>
+          <span><span class="title"><a href="https://arxiv.org/abs/2208.06882" target="_blank" rel="noopener noreferrer">CoShNet: A Hybrid Complex Valued Neural Network using Shearlets</a></span><span class="venue">arXiv:2208.06882 &middot; Aug 2022</span></span>
+        </li>
+      </ol>
+      </details>
+      <details class="pubgroup">
+      <summary class="pubgroup-name"><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>Classical Machine Learning Applications<span class="count">2</span></summary>
+      <ol class="pubs">
+        <li>
+          <span class="year">2019</span>
+          <span><span class="title"><a href="https://ieeexplore.ieee.org/document/8944605" target="_blank" rel="noopener noreferrer">Identification of Potential Future Credit Card Defaulters from Non Defaulters using Self Organizing Maps</a></span><span class="venue">IEEE 10th ICCCNT &middot; Dec 2019</span></span>
+        </li>
+        <li>
+          <span class="year">2019</span>
+          <span><span class="title"><a href="https://doi.org/10.1109/ACCESS.2019.2959557" target="_blank" rel="noopener noreferrer">Flooding Level Classification by Gait Analysis of Smartphone Sensor Data</a></span><span class="venue">IEEE Access, vol. 7, pp. 181678&ndash;181687 &middot; Dec 2019</span></span>
+        </li>
+      </ol>
+      </details>
+  </section>
+
+  <!-- ======================================================== news features -->
+  <section id="news">
+    <details class="newsfold">
+      <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><h2>News features</h2><span class="count">4</span></summary>
+      <ol class="pubs">
+        <li>
+          <span class="year">2022</span>
+          <span>
+            <span class="title">MemeChat promotes Agnik Ghosh and Ujjawal Panchal to co-founders</span>
+            <span class="venue"><a href="https://www.financialexpress.com/business/brandwagon/memechat-promotes-agnik-ghosh-and-ujjawal-panchal-to-co-founders/2491709/" target="_blank" rel="noopener noreferrer">Financial Express</a>, <a href="https://www.afaqs.com/people-spotting/memechat-elevates-agnik-ghosh-ujjawal-panchal-as-co-founders" target="_blank" rel="noopener noreferrer">afaqs!</a>, <a href="https://mediabrief.com/memechat-elevates-agnik-ghosh-and-ujjawal-panchal-to-co-founders/" target="_blank" rel="noopener noreferrer">MediaBrief</a> and <a href="https://www.medianews4u.com/memechat-elevates-agnik-ghosh-ujjawal-panchal-as-co-founders/" target="_blank" rel="noopener noreferrer">MediaNews4U</a> &middot; Apr 2022</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2021</span>
+          <span>
+            <span class="title">In conversation with MemeChat CTO Ujjawal Panchal</span>
+            <span class="venue"><a href="https://analyticsindiamag.com/ai-features/in-conversation-with-memechat-cto-ujjawal-panchal" target="_blank" rel="noopener noreferrer">Analytics India Magazine</a> &middot; Jul 2021</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2021</span>
+          <span>
+            <span class="title">Meet AMY: the AI meme generators using deep learning</span>
+            <span class="venue"><a href="https://www.dqindia.com/meet-amy-ai-meme-generators-using-deep-learning/" target="_blank" rel="noopener noreferrer">Dataquest India</a> &middot; Apr 2021</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2020</span>
+          <span>
+            <span class="title">Prognostic COVID&#8209;19 Screening for Early Detection using Signal Processing &amp; CVNNs</span>
+            <span class="venue"><a href="https://timesofindia.indiatimes.com/city/ahmedabad/city-youth-offers-model-for-quicker-detection/articleshow/75652620.cms" target="_blank" rel="noopener noreferrer">The Times of India</a> and <a href="https://www.youtube.com/watch?v=zoNL553dUnk" target="_blank" rel="noopener noreferrer">Zee 24 Kalak</a> &middot; May 2020</span>
+          </span>
+        </li>
+      </ol>
+    </details>
+  </section>
+
+  <!-- ============================================================== projects -->
+  <section id="projects">
+    <details class="newsfold">
+      <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><h2>Projects</h2><span class="count">10</span></summary>
+      <ol class="pubs">
+        <li>
+          <span class="year">2019</span>
+          <span>
+            <span class="title"><a href="https://github.com/Ujjawal-K-Panchal/Bernoulli-Restricted-Boltzmann-Machines" target="_blank" rel="noopener noreferrer">Bernoulli Restricted Boltzmann Machines</a></span>
+            <span class="venue">Contrastive divergence and Gibbs sampling, written from scratch in Python &middot; 2019&ndash;2020</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2019</span>
+          <span>
+            <span class="title"><a href="https://github.com/Ujjawal-K-Panchal/Bernoulli-Restricted-Boltzmann-Machines" target="_blank" rel="noopener noreferrer">Movie recommendation with a Bernoulli RBM</a></span>
+            <span class="venue">An application of the RBM above &middot; Sep 2019</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2019</span>
+          <span>
+            <span class="title"><a href="https://github.com/Ujjawal-K-Panchal/OS-Project-Sem-6" target="_blank" rel="noopener noreferrer">Weaver, a multithread scheduler</a></span>
+            <span class="venue">FCFS, SJF, priority and round-robin compared for user-level threads on one core &middot; Apr 2019</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2018</span>
+          <span>
+            <span class="title"><a href="https://github.com/Ujjawal-K-Panchal/Black-Friday-Data-Analysis-Project" target="_blank" rel="noopener noreferrer">Black Friday dataset analysis</a></span>
+            <span class="venue">Sales analysis and retail prediction on Kaggle data &middot; SRM University &middot; Sep 2018</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2017</span>
+          <span>
+            <span class="title"><a href="https://prezi.com/view/cfBu8mBBwq3cX8sthsqd/" target="_blank" rel="noopener noreferrer">Credit default analysis using machine learning</a></span>
+            <span class="venue">CRISP&#8209;DM applied to Taiwan credit-card data &middot; National University of Singapore &middot; Dec 2017</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2017</span>
+          <span>
+            <span class="title"><a href="https://github.com/Ujjawal-K-Panchal/Talkity" target="_blank" rel="noopener noreferrer">Talkity</a></span>
+            <span class="venue">A chatbot maker in C++ that learns replies and tolerates typos &middot; SRM University &middot; Oct 2017</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2017</span>
+          <span>
+            <span class="title"><a href="https://www.facebook.com/groups/354582574912748/posts/462474244123580/" target="_blank" rel="noopener noreferrer">Mini SONAR and plotter</a></span>
+            <span class="venue">Arduino, servo and an ultrasound sensor ranging to 4 m, plotted live &middot; SRM University &middot; Jan 2017</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2016</span>
+          <span>
+            <span class="title"><a href="https://github.com/Ujjawal-K-Panchal/Burglar-Alarm-Using-Arduino" target="_blank" rel="noopener noreferrer">Burglar detection system using Arduino</a></span>
+            <span class="venue">Keypad door lock with an ultrasound sensor and buzzer &middot; Jun 2016</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2015</span>
+          <span>
+            <span class="title"><a href="https://github.com/Ujjawal-K-Panchal/Upro.h" target="_blank" rel="noopener noreferrer">Upro.h</a></span>
+            <span class="venue">A C++ preprocessor header for animations, menus and quizzes &middot; Apr 2015</span>
+          </span>
+        </li>
+        <li>
+          <span class="year">2014</span>
+          <span>
+            <span class="title"><a href="https://docs.google.com/document/d/1JjmS2ar-PPIHDuYALVPHq9bEs6uZEOobCNv-OsrMayA/preview" target="_blank" rel="noopener noreferrer">Chatterbot</a></span>
+            <span class="venue">First C++ chatbot, retrieving replies by Damerau-Levenshtein distance &middot; one of four programs in a 12th-grade project, with projectile motion, collisions and draw &middot; 2014&ndash;2015</span>
+          </span>
+        </li>
+      </ol>
+    </details>
+  </section>
+
+  <!-- ========================================================== certificates -->
+  <section id="certificates">
+    <details class="newsfold">
+      <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg><h2>Certificates</h2><span class="count">18</span></summary>
+        <details class="pubgroup">
+        <summary class="pubgroup-name"><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>LinkedIn<span class="count">1</span></summary>
+        <ol class="pubs">
+          <li>
+            <span class="year">2020</span>
+            <span>
+              <span class="title"><a href="https://www.linkedin.com/learning/certificates/ce4f468a7aa8f44e1232d2a05c68ffa7f5cede551ab755714f9397bd292839c0/" target="_blank" rel="noopener noreferrer">Ken Blanchard on Servant Leadership</a></span>
+              <span class="venue">Oct 2020</span>
+            </span>
+          </li>
+        </ol>
+        </details>
+        <details class="pubgroup">
+        <summary class="pubgroup-name"><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>Udemy<span class="count">2</span></summary>
+        <ol class="pubs">
+          <li>
+            <span class="year">2019</span>
+            <span>
+              <span class="title"><a href="https://www.udemy.com/certificate/UC-0YOYALNB/" target="_blank" rel="noopener noreferrer">Deep Learning A-Z: Hands-On Artificial Neural Networks</a></span>
+              <span class="venue">Oct 2019 &middot; credential UC-0YOYALNB</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2017</span>
+            <span>
+              <span class="title"><a href="https://www.udemy.com/certificate/UC-Xf76PTQD/" target="_blank" rel="noopener noreferrer">Introduction to Linux</a></span>
+              <span class="venue">Sep 2017 &middot; credential UC-Xf76PTQD</span>
+            </span>
+          </li>
+        </ol>
+        </details>
+        <details class="pubgroup">
+        <summary class="pubgroup-name"><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>Coursera<span class="count">8</span></summary>
+        <ol class="pubs">
+          <li>
+            <span class="year">2019</span>
+            <span>
+              <span class="title"><a href="https://www.coursera.org/account/accomplishments/verify/BXPYCS9PDLSN" target="_blank" rel="noopener noreferrer">Building Web Applications in PHP</a></span>
+              <span class="venue">Apr 2019 &middot; credential BXPYCS9PDLSN</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2018</span>
+            <span>
+              <span class="title"><a href="https://www.coursera.org/account/accomplishments/specialization/KCBWT2Q2CMHL" target="_blank" rel="noopener noreferrer">Deep Learning Specialization</a></span>
+              <span class="venue">Oct 2018 &middot; credential KCBWT2Q2CMHL</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2018</span>
+            <span>
+              <span class="title"><a href="https://www.coursera.org/account/accomplishments/verify/E8GDGDV7XJD3" target="_blank" rel="noopener noreferrer">Sequence Models</a></span>
+              <span class="venue">Oct 2018 &middot; credential E8GDGDV7XJD3</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2018</span>
+            <span>
+              <span class="title"><a href="https://www.coursera.org/account/accomplishments/verify/UVUPEBWU7LUG" target="_blank" rel="noopener noreferrer">Convolutional Neural Networks</a></span>
+              <span class="venue">Oct 2018 &middot; credential UVUPEBWU7LUG</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2018</span>
+            <span>
+              <span class="title"><a href="https://www.coursera.org/account/accomplishments/verify/CXMHASL8HYKW" target="_blank" rel="noopener noreferrer">Structuring Machine Learning Projects</a></span>
+              <span class="venue">Sep 2018 &middot; credential CXMHASL8HYKW</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2018</span>
+            <span>
+              <span class="title"><a href="https://www.coursera.org/account/accomplishments/verify/ABGKDBF7MAQ3" target="_blank" rel="noopener noreferrer">Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization</a></span>
+              <span class="venue">Sep 2018 &middot; credential ABGKDBF7MAQ3</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2018</span>
+            <span>
+              <span class="title"><a href="https://www.coursera.org/account/accomplishments/verify/G7P5PAPGEUYG" target="_blank" rel="noopener noreferrer">Neural Networks and Deep Learning</a></span>
+              <span class="venue">Jul 2018 &middot; credential G7P5PAPGEUYG</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2017</span>
+            <span>
+              <span class="title"><a href="https://www.coursera.org/account/accomplishments/verify/DAYPMUPJD6NN" target="_blank" rel="noopener noreferrer">Machine Learning by Stanford University on Coursera</a></span>
+              <span class="venue">Aug 2017 &middot; credential DAYPMUPJD6NN</span>
+            </span>
+          </li>
+        </ol>
+        </details>
+        <details class="pubgroup">
+        <summary class="pubgroup-name"><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>In-person at institutes<span class="count">7</span></summary>
+        <ol class="pubs">
+          <li>
+            <span class="year">2018</span>
+            <span>
+              <span class="title"><a href="https://drive.google.com/file/d/0B0eNyzFDaZ7ldkVfVDgtVXUtWnNpX2Y0UkcyNUFteEFiNG5F/view" target="_blank" rel="noopener noreferrer">Letter of Internship and Recommendation</a></span>
+              <span class="venue">Indian Institute of Management Ahmedabad &middot; Jul 2018</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2018</span>
+            <span>
+              <span class="title"><a href="https://drive.google.com/file/d/0B13R_ijQ3Y0mSVlwX1Y2U3JKMVowT3N1bEFXRjFpak8wdmYw/view" target="_blank" rel="noopener noreferrer">Big Data and Analytics using Artificial Neural Networks</a></span>
+              <span class="venue">National University of Singapore &middot; Jan 2018</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2018</span>
+            <span>
+              <span class="title"><a href="https://drive.google.com/file/d/0B13R_ijQ3Y0meW1Qd0VHRE9mYnhEQWZubUlUN3AtUjg0dUI0/view" target="_blank" rel="noopener noreferrer">Internship on Big Data and Analytics using Artificial Neural Networks</a></span>
+              <span class="venue">Corporate Gurukul &middot; Jan 2018</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2017</span>
+            <span>
+              <span class="title"><a href="https://drive.google.com/file/d/0B13R_ijQ3Y0mR1Z1WUpoajdha1BORWdPRjI0eFJsV1ZKWDZF/view" target="_blank" rel="noopener noreferrer">Internship on Big Data and Hadoop System Administration</a></span>
+              <span class="venue">Hewlett Packard Enterprise &middot; Dec 2017</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2017</span>
+            <span>
+              <span class="title"><a href="https://drive.google.com/file/d/0B0eNyzFDaZ7lQ1NGd1pab0RFSkU/view" target="_blank" rel="noopener noreferrer">Certified Information Security and Ethical Hacker</a></span>
+              <span class="venue">Pristine InfoSolutions Pvt. Ltd. &middot; Jun 2017</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2016</span>
+            <span>
+              <span class="title"><a href="https://drive.google.com/file/d/15z2xG4T6kxewGderFvTsyp2zb0__akgZ/view" target="_blank" rel="noopener noreferrer">Kaizen Robotics Program</a></span>
+              <span class="venue">Lema Labs &middot; Oct 2016</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2013</span>
+            <span>
+              <span class="title"><a href="https://drive.google.com/file/d/0B0eNyzFDaZ7lcV9ueDN0bUU5WFk/view" target="_blank" rel="noopener noreferrer">Hemophilia Appreciation Certificate</a></span>
+              <span class="venue">World Federation of Hemophilia &middot; Aug 2013</span>
+            </span>
+          </li>
+        </ol>
+        </details>
+    </details>
+  </section>
+
+  <!-- ======================================================= education/tools -->
+  <section id="background">
+    <h2>Background</h2>
+    <div>
+      <div>
+        <h3>Education</h3>
+        <ul class="plain">
+          <li><span class="k">MSc, Computer Science</span><span class="v">University of California, Davis</span></li>
+          <li><span class="k">BTech, Computer Science</span><span class="v">SRM University &middot; 2016&ndash;2020</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
