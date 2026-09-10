@@ -103,6 +103,9 @@ strong { font-weight: 600; color: var(--title); }
   line-height: 1.6; color: var(--ink-soft); white-space: nowrap; margin: 0;
 }
 .term .pr { color: var(--ink-faint); }
+/* A shell prints no prompt for a line it has not reached yet. Only applies once
+   the script takes over, so with no JS every prompt shows with its command. */
+.term.is-typed li:not(.started) .pr { visibility: hidden; }
 /* The command text is always in the DOM; typing only clips how much shows,
    so no-JS, screen readers and copy-paste all get the whole line. */
 .term .cmd { display: inline-block; overflow: hidden; white-space: nowrap; vertical-align: bottom; }
@@ -111,7 +114,9 @@ strong { font-weight: 600; color: var(--title); }
   width: .42em; height: 1em; margin-left: .12em;
   background: var(--accent); vertical-align: -.14em;
 }
-.term li.typing::after { display: inline-block; animation: caret 1.05s steps(1) infinite; }
+.term li.typing::after,
+.term li.rest::after { display: inline-block; animation: caret 1.05s steps(1) infinite; }
+.term { cursor: pointer; }
 @keyframes caret { 50% { opacity: 0 } }
 
 /* ------------------------------------------------------------- backdrops */
@@ -125,13 +130,14 @@ strong { font-weight: 600; color: var(--title); }
 /* vector-effect does not inherit, so it has to sit on the shapes themselves. */
 .backdrop svg *, .bd-shear * { vector-effect: non-scaling-stroke; }
 .bd-bulb {
-  width: 240px; height: 456px; left: 30px; top: -30px; stroke-width: 1;
+  width: 200px; height: 380px; left: 41px; top: -51px; stroke-width: 1;
   transform: rotate(45deg); transform-origin: 50% 50%;
 }
 .bd-bulb .bd-coil { stroke: var(--backdrop-lit); }
 /* The tiling lives inside the Publications section it belongs to. The rays all
    end on the viewBox edge, so fade them out before they get there. */
 #publications { position: relative; }
+#work + #publications { padding-top: 1.5rem; }
 .bd-shear {
   width: 560px; height: 560px;
   left: 52%; top: 50%; transform: translate(-50%, -50%);
@@ -439,7 +445,7 @@ h3 { font-size: 1.2rem; font-weight: 600; color: var(--title); margin: 0 0 .25re
 
 /* Earlier is not a role's detail — it opens seven roles. Pull it out of the
    timeline's indent so it does not read as nested under the row above it. */
-.earlier { margin-left: -1.5rem; margin-top: .6rem; }
+.earlier { margin-left: -1.5rem; margin-top: .05rem; }
 .earlier > summary { font-size: .68rem; letter-spacing: .12em; }
 .earlier > .early { margin-top: .9rem; margin-left: 1.5rem; }
 
