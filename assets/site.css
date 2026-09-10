@@ -36,7 +36,7 @@
 }
 
 * { box-sizing: border-box; }
-html { font-size: 23px; -webkit-text-size-adjust: 100%; overflow-x: clip; }
+html { font-size: 23px; -webkit-text-size-adjust: 100%; overflow-x: clip; scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -188,6 +188,17 @@ h3 { font-size: 1.2rem; font-weight: 600; color: var(--title); margin: 0 0 .25re
 
 .focus { color: var(--ink-soft); }
 .focuslabel { color: var(--accent); }
+/* Jumps down the page rather than off it, so it takes the nav strip's voice
+   rather than an external link's. */
+.jump { margin: .9rem 0 0; }
+.jump a {
+  font-family: var(--mono); font-size: .68rem; letter-spacing: .1em;
+  text-transform: uppercase; text-decoration: none;
+  display: inline-flex; align-items: center; gap: .45rem;
+}
+.jump a:hover { text-decoration: underline; }
+.jump .jumpmark { font-size: .9em; transition: transform .18s; }
+.jump a:hover .jumpmark { transform: translateY(2px); }
 
 /* Each category is a card that opens on hover; click keeps it usable on touch. */
 .pubgroup { border-top: 1px solid var(--rule-soft); }
@@ -369,6 +380,7 @@ h3 { font-size: 1.2rem; font-weight: 600; color: var(--title); margin: 0 0 .25re
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
 }
 
 
