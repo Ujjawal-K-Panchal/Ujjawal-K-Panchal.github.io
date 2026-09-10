@@ -6,8 +6,6 @@
   color-scheme: dark;
 
   --paper:    oklch(0.1568 0.0034 17.52);
-  --wash:     oklch(0.19 0.0034 17.52);
-  --surface:  oklch(0.2423 0.005 39.39);
 
   --title:    #ffffff;
   --ink:      oklch(0.93 0.002 250);
@@ -19,6 +17,8 @@
 
   --accent:      oklch(0.835 0.088 240);
   --accent-lift: oklch(0.9 0.092 240);
+  --backdrop:     oklch(0.835 0.088 240 / 0.13);
+  --backdrop-lit: oklch(0.835 0.088 240 / 0.2);
 
   --serif: "EB Garamond", Georgia, Charter, "Iowan Old Style", "Times New Roman", serif;
   --mono: "Menlo", ui-monospace, SFMono-Regular, "SF Mono", Consolas, monospace;
@@ -36,7 +36,7 @@
 }
 
 * { box-sizing: border-box; }
-html { font-size: 23px; -webkit-text-size-adjust: 100%; }
+html { font-size: 23px; -webkit-text-size-adjust: 100%; overflow-x: clip; }
 
 body {
   margin: 0;
@@ -47,7 +47,7 @@ body {
   overflow-wrap: break-word;
 }
 
-.wrap { max-width: 56rem; margin: 0 auto; padding: 0 1.4rem; }
+.wrap { position: relative; max-width: 56rem; margin: 0 auto; padding: 0 1.4rem 4rem; }
 
 a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
 a:hover { color: var(--accent-lift); }
@@ -56,7 +56,7 @@ strong { font-weight: 600; color: var(--title); }
 
 /* ------------------------------------------------------------------- hero */
 
-/* the philosophy strip's own bottom rule closes the hero */
+/* the identities' own top rule closes the hero */
 .hero { padding: 4rem 0 0; }
 
 .hero h1 {
@@ -73,27 +73,52 @@ strong { font-weight: 600; color: var(--title); }
 }
 .hero .standfirst strong { color: var(--title); font-weight: 600; }
 
-/* The philosophy: bare words, one lit at a time, then round again. */
-.philosophy {
-  display: flex; flex-wrap: wrap; align-items: baseline;
-  gap: .3rem .55rem;
-  padding: .9rem 0;
+/* The method, as the commands it already is. Lines type in, hold, clear, repeat. */
+.term {
+  padding: .85rem 0 .9rem;
   border-top: 1px solid var(--rule-soft);
-  border-bottom: 1px solid var(--rule-soft);
 }
-.philosophy .beat {
-  font-family: var(--mono);
-  font-size: .68rem; letter-spacing: .11em; text-transform: uppercase;
-  color: var(--ink-faint);
-  transition: color .25s;
+.term-lines { list-style: none; margin: 0; padding: 0; }
+.term-lines li {
+  font-family: var(--mono); font-size: .64rem; line-height: 1.6;
+  color: var(--ink-soft); white-space: nowrap; margin: 0;
 }
-.philosophy .beat.lit { color: var(--accent); }
-.philosophy .arrow { color: var(--rule); font-size: .68rem; }
-.philosophy .loop {
-  font-family: var(--mono); font-size: .62rem; letter-spacing: .11em;
-  text-transform: uppercase; color: var(--ink-faint);
-  margin-left: auto;
+.term .pr { color: var(--ink-faint); }
+/* The command text is always in the DOM; typing only clips how much shows,
+   so no-JS, screen readers and copy-paste all get the whole line. */
+.term .cmd { display: inline-block; overflow: hidden; white-space: nowrap; vertical-align: bottom; }
+.term li::after {
+  content: ""; display: none;
+  width: .42em; height: 1em; margin-left: .12em;
+  background: var(--accent); vertical-align: -.14em;
 }
+.term li.typing::after { display: inline-block; animation: caret 1.05s steps(1) infinite; }
+@keyframes caret { 50% { opacity: 0 } }
+
+/* ------------------------------------------------------------- backdrops */
+/* Hairline motifs behind the content: a bulb over the hero, the shearlet
+   tiling from CoShNet lower down. Never above the text, never clickable. */
+.backdrop {
+  position: absolute; inset: 0;
+  z-index: -1; pointer-events: none;
+}
+.backdrop svg { position: absolute; stroke: var(--backdrop); }
+/* vector-effect does not inherit, so it has to sit on the shapes themselves. */
+.backdrop svg * { vector-effect: non-scaling-stroke; }
+/* right: -30px is bounded by the 38.4px ink inset inside the 240px box. */
+.bd-bulb { width: 240px; height: 456px; right: -30px; top: -50px; stroke-width: 1; }
+.bd-bulb .bd-coil { stroke: var(--backdrop-lit); }
+/* Below .wrap's max-width the overhang would eat the page's own gutter. */
+@media (max-width: 1348px) { .bd-bulb { right: 0; } }
+/* The rays all end on the viewBox edge, so fade them out before they get there. */
+.bd-shear {
+  width: 700px; height: 700px; left: -330px; top: 1560px;
+  -webkit-mask-image: radial-gradient(closest-side, #000 46%, transparent 92%);
+  mask-image: radial-gradient(closest-side, #000 46%, transparent 92%);
+}
+
+@media (max-width: 900px) { .backdrop { display: none; } }
+
 
 /* ---------------------------------------------------------------- section */
 
@@ -112,7 +137,7 @@ h3 { font-size: 1.2rem; font-weight: 600; color: var(--title); margin: 0 0 .25re
 
 /* this section opens straight onto the cards, so it needs far less lead-in
    than a section headed by an h2 */
-#who { padding-top: 1.2rem; }
+#who { padding-top: 0; }
 
 .identities {
   display: grid; grid-template-columns: repeat(3, 1fr);
@@ -139,7 +164,7 @@ h3 { font-size: 1.2rem; font-weight: 600; color: var(--title); margin: 0 0 .25re
 .ident .name .chev { color: var(--accent); }
 .ident[aria-expanded="true"] .name .chev { transform: rotate(90deg); }
 .ident[aria-expanded="true"] .name { color: var(--title); }
-.ident .gloss { font-size: 1rem; color: var(--ink-soft); display: block; margin-top: .5rem; line-height: 1.45; }
+.ident .gloss { font-size: 1rem; color: var(--ink-soft); display: block; margin-top: .5rem; line-height: 1.45; text-wrap: balance; }
 
 .ident-body { padding-top: 1.4rem; }
 .ident-panel { display: none; }
@@ -178,13 +203,6 @@ h3 { font-size: 1.2rem; font-weight: 600; color: var(--title); margin: 0 0 .25re
 .pubgroup:hover .pubgroup-name,
 .pubgroup:focus-within .pubgroup-name,
 .pubgroup[open] .pubgroup-name { color: var(--title); }
-
-.pubgroup-name .count {
-  font-family: var(--mono); font-size: .66rem; color: var(--ink-faint);
-  font-variant-numeric: tabular-nums;
-}
-.pubgroup:hover .pubgroup-name .count,
-.pubgroup[open] .pubgroup-name .count { color: var(--accent); }
 
 .pubgroup .pubs { padding: 0 0 .9rem; }
 .pubgroup summary::-webkit-details-marker,
@@ -231,8 +249,20 @@ h3 { font-size: 1.2rem; font-weight: 600; color: var(--title); margin: 0 0 .25re
   display: block; margin-bottom: .28rem;
 }
 .role.now .when { color: var(--accent); }
-.role .org { font-size: .88rem; color: var(--ink-faint); margin: 0 0 .4rem;
-             display: flex; align-items: center; gap: .6rem; }
+/* One entry per organisation: the institution heads it, the designation
+   follows. Where an org held more than one post, they stack beneath it. */
+.role h3 {
+  display: flex; align-items: center; gap: .6rem; flex-wrap: wrap;
+  font-size: 1.15rem; color: var(--ink-faint); margin: 0 0 .3rem;
+}
+.role h3 .orgname { color: var(--title); }
+.desig { font-size: .96rem; font-weight: 400; color: var(--ink-soft); margin: 0 0 .45rem; }
+
+.posts { list-style: none; margin: .55rem 0 0; padding: 0 0 0 1rem;
+         border-left: 1px solid var(--rule-soft); }
+.posts > li { margin-bottom: .85rem; }
+.posts > li:last-child { margin-bottom: 0; }
+.posts .desig { margin-bottom: .35rem; }
 /* Marks come in every colour and aspect ratio; flatten them to one white
    silhouette so the column reads as a set. Widths stay free so wordmarks
    (IIMA, HPE) are not squeezed into a square. */
@@ -251,7 +281,6 @@ h3 { font-size: 1.2rem; font-weight: 600; color: var(--title); margin: 0 0 .25re
   margin-right: .28em;
   filter: brightness(0) invert(1); opacity: .72;
 }
-a:hover .inlinelogo { opacity: 1; }
 
 .orgmark {
   flex: none; font-size: 1.35rem; line-height: 1;
@@ -274,11 +303,13 @@ a:hover .inlinelogo { opacity: 1; }
 .early:hover { opacity: 1; }
 
 
-/* --------------------------------------------------------------- two-col */
+/* ------------------------------------------------------------ background */
 
+/* Set in the page's serif so it reads as a child of the h2 above it, which is
+   mono, uppercase and faint like every other section label. */
 #background h3 {
-  font-size: .72rem; font-family: var(--mono); letter-spacing: .16em;
-  text-transform: uppercase; color: var(--ink-faint); font-weight: 500; margin-bottom: .9rem;
+  font-family: var(--serif); font-size: 1.05rem; font-weight: 600;
+  color: var(--ink-soft); margin-bottom: .7rem;
 }
 
 .plain { list-style: none; padding: 0; margin: 0; }
@@ -314,7 +345,7 @@ a:hover .inlinelogo { opacity: 1; }
 @media (max-width: 760px) {
 
   /* Tabs stack into rows; the accent moves to a left edge so it still reads. */
-  .identities { grid-template-columns: 1fr; border-top: 0; }
+  .identities { grid-template-columns: 1fr; }
   .ident {
     border-top: 0; margin-top: 0;
     border-left: 2px solid var(--rule-soft);
@@ -327,17 +358,13 @@ a:hover .inlinelogo { opacity: 1; }
 
 @media (max-width: 520px) {
   html { font-size: 20px; }
-  .wrap { padding: 0 1.1rem; }
+  .wrap { padding: 0 1.1rem 3rem; }
   .hero { padding: 2.6rem 0 1.6rem; }
   .hero .standfirst { font-size: 1.15rem; margin-bottom: 1.4rem; }
-  .philosophy .loop { margin-left: 0; flex-basis: 100%; margin-top: .35rem; }
   .facts li, .pubs li { grid-template-columns: 1fr; gap: .15rem; }
   .facts .metric, .pubs .year { font-size: .66rem; }
   .timeline { padding-left: 1.1rem; }
   .role::before { left: calc(-1.1rem + 1px); }
-  .more { margin-left: 1.1rem; }
-  footer.foot { gap: 1rem; }
-  footer.foot .sig { margin-left: 0; flex-basis: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -365,8 +392,6 @@ a:hover .inlinelogo { opacity: 1; }
 .rolemore summary .chev { color: var(--accent); }
 .rolemore summary:hover .chev { color: var(--accent); }
 .rolemore[open] > summary { color: var(--ink-soft); }
-.rolemore summary .count { color: var(--ink-faint); font-variant-numeric: tabular-nums; }
-.rolemore summary:hover .count { color: var(--accent); }
 .rolemore > ul { margin-top: .45rem; }
 
 /* Earlier is not a role's detail — it opens seven roles. Pull it out of the
@@ -394,23 +419,8 @@ a:hover .inlinelogo { opacity: 1; }
 .newsfold summary::marker { display: none; content: ""; }
 .newsfold summary h2 { margin: 0; transition: color .18s; }
 .newsfold summary .chev { color: var(--accent); }
-.newsfold summary .count {
-  font-family: var(--mono); font-size: .68rem; color: var(--ink-faint);
-  font-variant-numeric: tabular-nums;
-}
 .newsfold summary:hover h2 { color: var(--ink-soft); }
-.newsfold summary:hover .count { color: var(--accent); }
 .newsfold[open] > summary .chev { transform: rotate(90deg); }
 .newsfold > .pubs { margin-top: 1.2rem; }
 
 
-/* ------------------------------------------------------- featured row */
-/* One paper and one project stay open above the folds: the strongest work
-   should not need a click to be seen. */
-.featured { margin-bottom: 1.4rem; }
-.featured .pubs li { border-top: 0; padding-top: 0; }
-.featured .flag {
-  display: block; font-family: var(--mono); font-size: .6rem;
-  letter-spacing: .16em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: .5rem;
-}

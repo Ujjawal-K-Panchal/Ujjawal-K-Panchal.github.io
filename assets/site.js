@@ -5,17 +5,34 @@
 (function () {
   "use strict";
 
-  /* ---- the philosophy loop: one beat lit at a time, then round again ---- */
-  var beats = [].slice.call(document.querySelectorAll(".philosophy .beat"));
-  if (beats.length && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    var i = 0;
-    setInterval(function () {
-      beats.forEach(function (b, n) { b.classList.toggle("lit", n === i); });
-      i = (i + 1) % beats.length;
-    }, 900);
+  /* ---- the method as a terminal: each line types itself in, once ---- */
+  var lines = [].slice.call(document.querySelectorAll(".term-lines li"));
+  if (lines.length && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var cmds = lines.map(function (li) { return li.querySelector(".cmd"); });
+    var lens = cmds.map(function (c) { return c.textContent.length; });
+    var li = 0, ci = 0;
+
+    // Types itself in once, then stays. A loop would leave the top of the page
+    // showing bare prompts most of the time, which no shell ever does.
+    cmds.forEach(function (c) { c.style.width = "0ch"; });
+    lines[0].classList.add("typing");
+
+    function tick() {
+      if (li >= lines.length) return;
+      if (ci < lens[li]) {
+        cmds[li].style.width = ++ci + "ch";
+        setTimeout(tick, 32 + (ci % 3) * 12);          // uneven, like a person typing
+      } else {
+        lines[li].classList.remove("typing");
+        li++; ci = 0;
+        if (li < lines.length) lines[li].classList.add("typing");
+        setTimeout(tick, 260);
+      }
+    }
+    setTimeout(tick, 250);
   }
 
-  /* ---- three identities: independent disclosures, all shut on load ---- */
+  /* ---- three identities: exclusive disclosures, all shut on load ---- */
   var cards = [].slice.call(document.querySelectorAll(".ident"));
   var panels = [].slice.call(document.querySelectorAll(".ident-panel"));
 
